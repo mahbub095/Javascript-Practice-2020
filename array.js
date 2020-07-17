@@ -9,5 +9,7 @@ console.log(friedsage)
 //console.log(friedsage[0])
 friedsage.push(55);
 //array te koyta element ache
-
+console.log(friedsage)
 console.log(friedsage.length)
+friedsage.pop();
+console.log(friedsage)
