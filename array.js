@@ -13,3 +13,12 @@ console.log(friedsage)
 console.log(friedsage.length)
 friedsage.pop();
 console.log(friedsage)
+
+// array element
+var team = ['Kalam','Jamal'];
+ 
+//first er ta remove korar jonno
+//team.shift()
+//first add korar jonno
+team.unshift('Mahbub')
+console.log(team)
