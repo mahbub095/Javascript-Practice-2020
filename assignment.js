@@ -35,4 +35,21 @@ function brickCalculator(floor){
 }
  console.log(brickCalculator(25));
 
- 
+//4
+
+ function tinyFriend(friends) {
+    if (friends.length == 0) {
+        console.log("Please enter a valid list.");
+        return;
+    }
+
+    let tiny = friends[0];
+    for (let i = 0; i < friends.length; i++) {
+        if (friends[i].length < tiny.length) {
+            tiny = friends[i];
+        }
+    }
+    console.log("Tiny friend is: " + tiny);
+}
+
+tinyFriend(['jahed', 'omi', 'bush']);
