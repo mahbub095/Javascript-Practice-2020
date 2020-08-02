@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 onclick="handleclick()">Events</h1>
+    <button onmouseout="handleclick()">Click me</button>
+    <button id="second">Click me</button>
+    <button>Click me</button>
+    <button>Click me</button>
+    <script>
+        function handleclick(){
+            //console.log('Someone');
+            document.body.style.backgroundColor='cyan';
+        }
+        const secondBtn = document.getElementById('second');
+        secondBtn.onclick =  handleclick;
+        // secondBtn.onclick = function(){
+        //      console.log('second  person clicked');
+        // }
+         
+    </script>
+    
+</body>
+</html>

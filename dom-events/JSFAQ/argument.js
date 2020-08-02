@@ -7,7 +7,13 @@ function add(num1,num2){
       sum = sum +num;
 
     }
-    return sum;
+
+    function logInfo(message){
+        console.log(message);
+    }
+    logInfo('Good Morning');
+
+    return sum ;
 }
 var result = add(5,5,6,7,8,9,);
 console.log('result',result);
