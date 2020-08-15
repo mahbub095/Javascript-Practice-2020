@@ -37,10 +37,10 @@
     </div>
     <script>
       
-
-       const input_value = document.getElementById('inputValue');
+// variable for front input id
+       const inputValue = document.getElementById('inputValue');
        const button = document.getElementById('button');
-       const city_name = document.getElementById('cityName');
+       const cityName = document.getElementById('cityName');
        const temp = document.getElementById('temp');
        const desc = document.getElementById('desc');
 
@@ -48,16 +48,17 @@
        fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&appid=f1f60bb66d167060a2845be999f78f81')
        .then(res => res.json())
         .then(data =>{
+            //json data
             const nameValue = data['name'];
-            //console.log(nameValue);
             const temValue = data['main']['temp'];
             const descValue = data['weather'][0]['description'];
+            const iconCode = data['weather'][0]['icon'];
 
+            //initial value
             cityName.innerHTML = nameValue;
             temp.innerHTML =(temValue-273).toFixed(1);
             desc.innerHTML = descValue;
-
-            const iconCode = data['weather'][0]['icon'];
+            //image fetch
             const iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
             document.getElementById("icon").src = iconUrl;
             
