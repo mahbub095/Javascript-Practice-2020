@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Temperature Hot</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> 
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background: url(images/bg-image.jpg) no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="container">
+        <form class="col-md-6 m-auto py-5">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control"  placeholder="Enter a location for Weather ...">
+                <div class="input-group-append">
+                    <button  type="button"  class="submit">Search</button>
+                </div>
+            </div>
+        </form>
+        <div class="weather-status text-white text-center">
+            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+             <h1 class="country"> </h1> 
+            
+            <h3><span>38.06</span>&deg;C</h3>
+            <h1 class="lead">Clouds</h1>
+        </div>
+    </div>
+    <script>
+        $(".submit").click(function(){
+                var city = $(".city").val()
+                //Make the API Call
+                $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Dhaka&appid=c93adfed03b03466c297101d1bc6a5a6",
+            {
+                zip:11355,
+                units:"imperial"
+            },
+            function(response){  //'response' is actually a variable, we could name it what ever we want. It just stores what the api sends
+                console.log(response)
+                $(".country").html(response.sys.country)
+                $(".temp").html(response.main.temp);
+                $(".city-name").html(response.name);
+                $(".weather").html(response.weather[0].description)
+            });
+        })
+        
+    </script> 
+
+</body>
+
+</html>
